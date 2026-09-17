@@ -10,6 +10,19 @@ body { padding: 0; margin: 0 }
   height: max(100vh, 222.222vw);
   transform: translate(-50%, -50%);
 }
+.unity-mobile #unity-fullscreen-container::before,
+.unity-mobile #unity-fullscreen-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: max(0px, calc((100vw - 45vh) / 2));
+  background: #73cf45;
+  pointer-events: none;
+  z-index: 2;
+}
+.unity-mobile #unity-fullscreen-container::before { left: 0; }
+.unity-mobile #unity-fullscreen-container::after { right: 0; }
 #unity-fullscreen-container { position: relative; }
 #unity-canvas { position: absolute; width: 100%; height: 100%; background: #1F1F20 }
 #unity-loading-container { position: absolute; width: 100%; height: 100%; backdrop-filter: blur(5px); display: none; }
