@@ -1,8 +1,15 @@
 body { padding: 0; margin: 0 }
 #unity-container { position: absolute }
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
-#unity-container.unity-mobile { position: fixed; width: 100%; height: 100% }
-.unity-mobile #unity-fullscreen-container { width: 100%; height: 100% }
+#unity-container.unity-mobile { position: fixed; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #73cf45 }
+.unity-mobile #unity-fullscreen-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, 45vh);
+  height: max(100vh, 222.222vw);
+  transform: translate(-50%, -50%);
+}
 #unity-fullscreen-container { position: relative; }
 #unity-canvas { position: absolute; width: 100%; height: 100%; background: #1F1F20 }
 #unity-loading-container { position: absolute; width: 100%; height: 100%; backdrop-filter: blur(5px); display: none; }
